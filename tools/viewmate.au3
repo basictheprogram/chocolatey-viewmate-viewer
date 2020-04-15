@@ -52,11 +52,12 @@ Func Install($config)
 
 EndFunc
 
+#RequireAdmin
 ConsoleWrite("Starting" & @LF)
 
 Local $config = ObjCreate("Scripting.Dictionary")
-;$config.Add("install", $CmdLine[1])
-$config.Add("install", "C:\projects\chocolatey\chocolatey-viewmate\ViewMate_Setup.exe")
+$config.Add("install", $CmdLine[1])
+;$config.Add("install", "C:\projects\chocolatey\chocolatey-viewmate\ViewMate_Setup.exe")
 
 Install($config)
 ConsoleWrite("End of Install!" & @LF)

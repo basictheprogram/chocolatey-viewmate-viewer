@@ -13,7 +13,7 @@
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <packageSourceUrl>https://github.com/basictheprogram/chocolatey-viewmate-viewer</packageSourceUrl>
     <docsUrl>ftp://ftp.pentalogix.com/documents/CAMGuide.pdf</docsUrl>
-    <tags>viewmate-viewer gerber dxf </tags>
+    <tags>viewmate viewer gerber dxf </tags>
     <summary>PentaLogix free Gerber viewer</summary>
     <description>ViewMate is PentaLogix free Gerber viewer. ViewMate allows you to import, view and print 
     PCB and aperture data. ViewMate also allows you to experiment with editing features. ViewMate does not 
