@@ -1,4 +1,4 @@
-Const $text = "ViewMate 11.16 - InstallShield Wizard"
+Const $text = "ViewMate 11.18 - InstallShield Wizard"
 
 Func Install($config)
    Local $install = $config.Item("install")
@@ -8,11 +8,11 @@ Func Install($config)
    Run($install)
 
    WinWaitActive($text, "requires the following items to be installed on your computer")
-   ConsoleWrite("C++ 2019" & @LF)
+   ConsoleWrite("C++ 2017" & @LF)
    Sleep(2000)
    ControlClick($text, "", "[CLASS:Button; INSTANCE:2]")
 
-   WinWaitActive($text, "Microsoft Visual C++ 2019 Redistributable")
+   WinWaitActive($text, "Microsoft Visual C++ 2017 Redistributable")
    ConsoleWrite("Redistributable" & @LF)
    Sleep(2000)
    Send("!y")
@@ -28,11 +28,11 @@ Func Install($config)
    Send("!a")
    Send("!n")
 
-   WinWaitActive("[CLASS:#32770]", "Serial Number")
-   ConsoleWrite("Serial Number" & @LF)
-   Sleep(2000)
-   Send("06614505")
-   Send("!n")
+ ;  WinWaitActive("[CLASS:#32770]", "Serial Number")
+ ;  ConsoleWrite("Serial Number" & @LF)
+ ;  Sleep(2000)
+ ;  Send("06614505")
+ ;  Send("!n")
 
    WinWaitActive("[CLASS:#32770]", "Choose Destination Location")
    ConsoleWrite("Destination" & @LF)

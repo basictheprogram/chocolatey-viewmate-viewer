@@ -2,11 +2,11 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>viewmate-viewer</id>
-    <version>11.16.53</version>
+    <version>11.18.40</version>
     <owners>basictheprogram</owners>
     <title>viewmate-viewer (Install)</title>
     <authors>PentaLogix</authors>
-    <projectUrl>ftp://ftp.pentalogix.com/ViewMate_Setup.zip</projectUrl>
+    <projectUrl>https://downloads.pentalogix.com/ViewMate_Setup.zip</projectUrl>
     <iconUrl>https://basictheprogram.github.io/chocolatey-viewmate-viewer/icons/viewmate-viewer.png</iconUrl>
     <copyright>Copyright © 1996-2020, PentaLogix</copyright>
     <licenseUrl>ftp://ftp.pentalogix.com/documents/CAMGuide.pdf</licenseUrl>
@@ -15,13 +15,13 @@
     <docsUrl>ftp://ftp.pentalogix.com/documents/CAMGuide.pdf</docsUrl>
     <tags>viewmate viewer gerber dxf </tags>
     <summary>PentaLogix free Gerber viewer</summary>
-    <description>ViewMate is PentaLogix free Gerber viewer. ViewMate allows you to import, view and print 
-    PCB and aperture data. ViewMate also allows you to experiment with editing features. ViewMate does not 
-    save or export data, but it is an excellent viewer, and the printing feature is useful. You are welcome 
-    to keep and use ViewMate as you wish. Make as many copies as you want, spread it around to others in 
+    <description>ViewMate is PentaLogix free Gerber viewer. ViewMate allows you to import, view and print
+    PCB and aperture data. ViewMate also allows you to experiment with editing features. ViewMate does not
+    save or export data, but it is an excellent viewer, and the printing feature is useful. You are welcome
+    to keep and use ViewMate as you wish. Make as many copies as you want, spread it around to others in
     your company, and give it to the people you do business with.</description>
     <dependencies>
-        <!-- <dependency id="vcredist2016" version="14.0" /> -->
+        <dependency id="vcredist2017" version="14.0" />
         <dependency id="autoit" version="3.3" />
     </dependencies>
   </metadata>

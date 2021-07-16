@@ -1,25 +1,24 @@
 ﻿$errorActionPreference = 'Stop';
 
-$fullPackage = "ViewMate_Setup.zip"
+$data = & (Join-Path -Path (Split-Path -Path $MyInvocation.MyCommand.Path) -ChildPath data.ps1)
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url = 'ftp://ftp.pentalogix.com/' + $fullPackage
-$workSpace = Join-Path $env:TEMP $env:ChocolateyPackageName 
-$installer = Join-Path $toolsDir $fullPackage
+$installer = Join-Path $toolsDir 'ViewMate_Setup.exe'
 
-$ftpFileArgs = @{
-  packageName = $packageName
-  fileName    = $installer
+$packageArgs = @{
+    packageName  = $env:ChocolateyPackageName
+    fileFullPath = Join-Path $toolsDir 'ViewMate_Setup.zip'
+    softwareName = 'ViewMate*'
 
-  url         = $url
-  username    = 'viewmate'
-  password    = 'download'
+    url          = $data.url
+    checksum     = $data.checksum
+    checksumType = $data.checksumType
 }
 
-Get-FtpFile @ftpFileArgs
+Get-ChocolateyWebFile @packageArgs
 
 $unzipFileArgs = @{
-  fileFullpath = $installer
-  destination  = $toolsDir
+    fileFullpath = Join-Path $toolsDir 'ViewMate_Setup.zip'
+    destination  = $toolsDir
 }
 
 Get-ChocolateyUnzip @unzipFileArgs
@@ -29,16 +28,3 @@ $autoitFile = Join-Path $toolsDir 'viewmate.au3'
 $fileFullPath = Join-Path $toolsDir 'ViewMate_Setup.exe'
 
 Start-ChocolateyProcessAsAdmin  -ExeToRun $autoitExe -Statements "$autoitFile $fileFullPath"
-
-$packageArgs = @{
-  packageName    = $env:ChocolateyPackageName
-  softwareName   = 'ViewMate*'
-  fileType       = 'EXE'
-  file           = Join-Path $toolsDir 'ViewMate_Setup.exe'
-  
-  checksum       = 'f394a3956e487d67611e0b8be1c6fcba7b50c0cb93391436844103323872b09a'
-  checksumType   = 'sha256'
-
-  validExitCodes = @(0, 3010, 1641)
-  silentArgs     = '/qn /norestart'
-}
